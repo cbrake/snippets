@@ -1,0 +1,9 @@
+
+export PKG_CONFIG_PATH=/build/pp/eSight/DisplayUnit/Software/oe2/build/angstrom-2007.1/tmp/staging/arm-angstrom-linux-gnueabi/lib/pkgconfig
+export PKG_CONFIG_DIR=/build/pp/eSight/DisplayUnit/Software/oe2/build/angstrom-2007.1/tmp/staging/arm-angstrom-linux-gnueabi/lib/pkgconfig
+CROSS_COMPILER_PATH=/build/pp/eSight/DisplayUnit/Software/oe2/build/angstrom-2007.1/tmp/cross/bin
+OE_STAGING_PATH=/build/pp/eSight/DisplayUnit/Software/oe2/build/angstrom-2007.1/tmp/staging/x86_64-linux/bin
+export PATH=$CROSS_COMPILER_PATH:$OE_STAGING_PATH:$PATH
+export ARCH=arm
+export CROSS_COMPILE=arm-angstrom-linux-gnueabi-
+
