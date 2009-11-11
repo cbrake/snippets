@@ -1,0 +1,12 @@
+AC_INIT([hello], [1.0], [email@company.com])
+AM_INIT_AUTOMAKE([-Wall -Werror foreign])
+AC_PROG_CC
+
+PKG_CHECK_MODULES(PACKAGE, gtk+-2.0)
+AC_SUBST(PACKAGE_CFLAGS)
+AC_SUBST(PACKAG_LIBS)
+
+AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_FILES([Makefile])
+AC_OUTPUT
+
