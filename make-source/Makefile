@@ -5,5 +5,5 @@
 # files to source (see man bash)
 
 all:
-	. ./setup-env; echo ${CLIFF}
+	. ./setup-env; echo ${CLIFF}; echo ${CLIFF}
 
