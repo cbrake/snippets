@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 
 struct A
@@ -34,7 +35,11 @@ main()
 {
 	A a;
 	B b(1,2);
+	B b2(3,4);
+	
+	memset(&b2, 0, sizeof(b2));
 
 	printf("sizeof(a) = %i, sizeof(b) = %i\n", sizeof(a), sizeof(b));
+	printf("b2.get_a() returns %i\n", b2.get_a());
 }
 
