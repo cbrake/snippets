@@ -8,9 +8,20 @@ struct A
 	int _b;
 };
 
+class C
+{
+public:
+	int _a;
+	int _b;
+	int get_b() {
+		return _b;
+	}
+};
+
 class B
 {
 public:
+	C _c;
 	int _a;
 	int _b;
 	B(int a, int b) 
@@ -42,5 +53,6 @@ main()
 	printf("sizeof(a) = %i, sizeof(b) = %i\n", sizeof(a), sizeof(b));
 	printf("b2.get_a() returns %i\n", b2.get_a());
 	printf("sizeof(A) = %i, sizeof(B) = %i\n", sizeof(A), sizeof(B));
+	printf("b2._c.get_b() = %i\n", b2._c.get_b());
 }
 
