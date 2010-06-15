@@ -5,7 +5,7 @@ print 'hi'
 
 
 try:
-    import asdfqwerqwer
+    var1 = lkasjdflkj
 except:
     print 'we have an exception'
     raise
