@@ -9,14 +9,33 @@ var sleep_test = function(i, callback) {
   });
 }
 
-var i;
-for (i=0; i < 10; i++) {
-  console.log("test ", i);
+/* this does not work as i == 10 in all the callbacks
+for (var i=0; i < 10; i++) {
+ console.log("test ", i);
+ sleep_test(i, function(i_) {
+   console.log("callback " + i + " " + i_);
+ });
+}
+*/
 
+/*
+// the following works
+for (var i=0; i < 10; i++) {
+  console.log("test ", i);
+  sleep_test(i, function(i) { 
+    return function(i_) {
+      console.log("callback " + i + " " + i_);
+    }
+  }(i));
+}
+*/
+
+// another way to implement
+for (var i=0; i < 10; i++) (function(i) {
+  console.log("test ", i);
   sleep_test(i, function(i_) {
     console.log("callback " + i + " " + i_);
   });
-}
-
+})(i);
 
 
