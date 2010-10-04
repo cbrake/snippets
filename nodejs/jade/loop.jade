@@ -1,0 +1,18 @@
+
+// the following works just fine
+p
+  | To:
+  - each i in loopvars
+    p= i 
+
+
+// but how do you string together text with some addition text?
+// why does the following now work?
+p
+  | To:
+  - each i in loopvars
+    | Hi &nbsp
+    = i
+    | &nbsp
+
+
