@@ -27,6 +27,8 @@ void main()
 	cairo_fill(cr);
 	cairo_rectangle(cr, 20, 20, 60, 60);
 	cairo_set_source_rgba(cr, 1, 1, 1, 0);
+	// this also works
+	cairo_set_source_rgba(cr, 0, 0, 0, 0);
 	cairo_fill(cr);
 	cairo_surface_write_to_png(surface, "8bit.png");
 
