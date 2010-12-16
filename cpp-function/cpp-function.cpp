@@ -17,7 +17,8 @@ struct B
 
 	void process() {
 		// simply calls callback
-		_callback();
+		if (_callback)
+			_callback();
 	}
 };
 
@@ -41,10 +42,6 @@ struct A
 		std::cout << "A::callback called\n";
 	}
 
-	void mf(int i) {  
-		std::cout << "mf " << i << "\n";
-	} 
-
 	void process() {
 		_b->process();
 	}
@@ -52,15 +49,18 @@ struct A
 
 int main() 
 { 
-	B b;
-	std::tr1::function<void (A*, int)> f(&A::mf); 
-	A a(&b); 
-	f( &a, 3); // OK, calls &a->mf(3) 
-	std::tr1::function<void (A&, int)> f2(&A::mf); 
-	f2( a, 4); // OK, calls a.mf(4) 
+	B * b = new B();
+	A * a = new A(b); 
 
 	// the following is example where object b calls back into a method
 	// in object a
-	a.process();
+	a->process();
+
+	// now delete object a, and verify the callback in B does not crash
+	delete a;
+
+	// try following still tries to call the callback
+	b->process();
 } 
+
 
