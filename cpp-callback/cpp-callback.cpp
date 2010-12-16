@@ -57,9 +57,10 @@ int main()
 	a->process();
 
 	// now delete object a, and verify the callback in B does not crash
+	// or still get called
 	delete a;
 
-	// try following still tries to call the callback
+	// now b should not execute the callback
 	b->process();
 } 
 
