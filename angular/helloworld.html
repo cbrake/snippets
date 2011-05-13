@@ -1,0 +1,24 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org">
+<script src="http://code.angularjs.org/angular-0.9.15.min.js" ng:autobind></script>
+ <body>
+  <h2>Bigg Bike Shop</h2>
+  <hr>
+  <b>Invoice:</b>
+  <br/>
+  <br/>
+  <table>
+   <tr><td> </td><td> </td>
+   <tr><td>Quantity</td><td>Cost</td></tr>
+   <tr>
+     <td><input name="qty" value="1" ng:validate="integer:0" ng:required/></td>
+     <td><input name="cost" value="19.95" ng:validate="number" ng:required/></td>
+   </tr>
+  </table>
+  <hr>
+  <b>Total:</b> {{qty * cost | currency}}
+  <hr>
+ </body>
+</html>
+
+

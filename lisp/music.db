@@ -1,0 +1,2 @@
+
+((:|TITLE| "Home place" :|ARTIST| "Gina" :|RATING| 100. :|RIPPED| |COMMON-LISP|::|T|) (:|TITLE| "Howdy" :|ARTIST| "Cliff" :|RATING| 2. :|RIPPED| |COMMON-LISP|::|T|) (:|TITLE| "Cliff" :|ARTIST| "Brake" :|RATING| 9. :|RIPPED| |COMMON-LISP|::|T|) (:|TITLE| "Home" :|ARTIST| "Dixie Chicks" :|RATING| 9. :|RIPPED| |COMMON-LISP|::|T|) (:|TITLE| "Fly" :|ARTIST| "Dixie Chicks" :|RATING| 8. :|RIPPED| |COMMON-LISP|::|T|) (:|TITLE| "Roses" :|ARTIST| "Kathy Mattea" :|RATING| 7. :|RIPPED| |COMMON-LISP|::|T|)) 
