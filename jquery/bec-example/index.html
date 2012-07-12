@@ -1,0 +1,68 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>Status</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+	<script src="index.js"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  refreshUpdateVersions();
+  updateState();
+  setTimeout(updateState, 5000);
+
+  $("#refreshUpdateButton").on("click", function(event, ui) {
+    refreshUpdateVersions()
+  })
+
+  //$('[id^=updateVersionItem]').on("click", function(event, ui) {
+  $("#updateVersionItem").on("click", function(event, ui) {
+    console.log("updateVersion, selected = " + $(this).attr('id'));
+  })
+});
+
+var versions = []
+
+var updateState = function() {
+  console.log('updateState')
+  setTimeout(updateState, 5000);
+}
+
+var refreshUpdateVersions = function() {
+  console.log("refreshUpdateVersions")
+  var versions = ["0.1", "0.2", "0.3"]
+  $("#updateVersionsList").empty()
+  for (var i=0; i < versions.length; i += 1) {
+    $("#updateVersionsList").append('<li><a href="#" data-role="button" id="updateVersionItem">' + versions[i] + '</a></li>');
+    if ($("#updateVersionsList").hasClass('ui-listview')) {
+      $("#updateVersionsList").listview("refresh");
+    } else {
+      $("#updateVersionsList").trigger('create');
+    }
+  }
+}
+
+  </script>
+</head> 
+<body> 
+
+<!-- Software update page -->
+<div data-role="page" id="software-update-page">
+	<div data-role="header">
+		<h1>Software Update</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+    <h1>Select Software version:</h1>
+    <ul data-role="listview" id="updateVersionsList">
+    </ul>
+    <br>
+    <a data-role="button" class="ui-btn-left" id="refreshUpdateButton">Refresh Update list</a>
+	</div><!-- /content -->
+</div>
+
+</body>
+</html>
+
