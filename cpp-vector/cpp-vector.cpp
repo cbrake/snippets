@@ -15,6 +15,7 @@ class point {
 			return "hi cliff";
 		}
 			
+	private:
 		int x;
 		int y;
 		int z;
@@ -38,8 +39,6 @@ main()
 	points.push_back(c);
 	points.push_back(c);
 	points_.push_back(&c);
-
-	printf("last point, x = %i\n", points.back().x);
 
 	// print all points
 	cout << "Loop by index, copy in vector" << endl;
