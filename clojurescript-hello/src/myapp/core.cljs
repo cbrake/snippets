@@ -5,6 +5,6 @@
 
 (defn -main
   [& args]
-  (println "Hello world!"))
+  (println "Hello world! Hi again"))
 
 (set! *main-cli-fn* -main)
