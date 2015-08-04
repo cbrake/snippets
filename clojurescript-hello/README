@@ -1,0 +1,5 @@
+wget https://github.com/clojure/clojurescript/releases/download/r1.7.28/cljs.jar
+java -cp cljs.jar:src clojure.main build.clj
+node main.js
+
+
