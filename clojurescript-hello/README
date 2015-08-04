@@ -1,8 +1,14 @@
+# based on http://funcool.github.io/clojurescript-unraveled/
 wget https://github.com/clojure/clojurescript/releases/download/r1.7.28/cljs.jar
 java -cp cljs.jar:src clojure.main build.clj
 node main.js
 
 # you can also watch files and automatically rebuild
 java -cp cljs.jar:src clojure.main watch.cli
+
+# repl
+# install rlwrap with your host package manager
+rlwrap java -cp cljs.jar:src clojure.main repl.clj
+
 
 
