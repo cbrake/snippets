@@ -1,0 +1,6 @@
+this example uses ES7 async/await
+
+sudo npm install -g babel
+babel-node app.js
+
+
