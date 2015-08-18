@@ -8,25 +8,27 @@ the server push data to the client.
 
 to use:
 
-npm install
+  npm install
 
 In two different terminals run:
-node server.js
-node client.js
+
+* node server.js
+* node client.js
 
 You should see the client printing out an incrementing count every 1s:
 
-node client.js
-Receiving pushed resource: push%20data
-{ count: 0 }
-{ count: 1 }
-{ count: 2 }
-{ count: 3 }
-{ count: 4 }
-{ count: 5 }
-{ count: 6 }
-{ count: 7 }
-{ count: 8 }
-....
+  node client.js
+  Receiving pushed resource: push%20data
+  { count: 0 }
+  { count: 1 }
+  { count: 2 }
+  { count: 3 }
+  { count: 4 }
+  { count: 5 }
+  { count: 6 }
+  { count: 7 }
+  { count: 8 }
+  ....
+
 
 
