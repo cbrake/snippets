@@ -8,7 +8,7 @@ the server push data to the client.
 
 to use:
 
-  npm install
+    npm install
 
 In two different terminals run:
 
