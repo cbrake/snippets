@@ -4,19 +4,22 @@ var http2 = require('http2');
 
 // The callback to handle requests
 function onRequest(request, response) {
-  var filename = path.join(__dirname, request.url);
+  console.log('request:', request.url);
 
-  console.log('request');
+  if (request.url == '/count') {
+    var push = response.push('push data');
+    push.writeHead(200);
 
-  var push = response.push('push data');
-  push.writeHead(200);
+    var count = 0;
 
-  var count = 0;
-
-  setInterval(function() {
-    push.write(JSON.stringify({count:count}));
-    count += 1;
-  }, 1000);
+    setInterval(function() {
+      push.write(JSON.stringify({count:count}));
+      count += 1;
+    }, 10000);
+  } else {
+    response.write('hello :-)');
+    response.end();
+  }
 }
 
 // Creating the server in plain or TLS mode (TLS mode is the default)
