@@ -1,0 +1,17 @@
+{
+  "name": "node-bluebird",
+  "version": "1.0.0",
+  "description": "",
+  "main": "read-dir.js",
+  "dependencies": {
+    "bluebird": "^2.9.34",
+    "influx": "^3.4.0",
+    "promised-mongo": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
