@@ -1,0 +1,9 @@
+this example is to experiement with defining compiler flags at command line.
+
+cmake -DCMAKE_CXX_FLAGS="${CMAKE_CXX_FLAGS} -DTESTDEFINE" 
+
+you can also do:
+
+CXXFLAGS=-DTESTDEFINE cmake
+
+
