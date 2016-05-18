@@ -1,3 +1,5 @@
+// from https://golang.org/doc/articles/wiki/
+
 package main
 
 import (
