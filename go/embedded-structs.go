@@ -37,3 +37,13 @@ func main() {
 	// we get the following error:
 	// cannot use promoted field A.FieldA2 in struct literal of type B
 }
+
+/* program output
+b: {A:{FieldA1:1 FieldA2:2} FieldA1:3 FieldB:4}
+b.FieldA1:  3
+b.A.FieldA1:  1
+b.FieldA2:  2
+b.A.FieldA2:  2
+b.FieldA2:  5
+b.A.FieldA2:  5
+*/
