@@ -30,3 +30,10 @@ func main() {
 	fmt.Println("PopBack: ", floats.PopBack())
 	fmt.Println("floats: ", floats)
 }
+
+/* outputs:
+floats:  [1 2 3 4]
+Pop:  1
+PopBack:  4
+floats:  [2 3]
+*/
