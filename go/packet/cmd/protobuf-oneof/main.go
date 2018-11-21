@@ -55,6 +55,8 @@ func main() {
 
 }
 
-// program output
+// program output:
 // sample: 27 bytes, packet: 29 bytes
 // protobuf oneof overhead is 2 bytes per packet
+// Decoded sample = id:"ET23B" index:2 value:2.1232 time:<seconds:1542820446 nanos:419989284 >
+// Decoded event = <nil>
