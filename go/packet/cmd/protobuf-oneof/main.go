@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/cbrake/snippets/go/packet"
+	"github.com/gogo/protobuf/proto"
 	"github.com/golang/protobuf/ptypes"
 )
 
@@ -39,6 +40,18 @@ func main() {
 		len(bP)-len(bS))
 
 	// test decoding the packet
+	pDecode := &packet.Packet{}
+
+	err = proto.Unmarshal(bP, pDecode)
+	if err != nil {
+		fmt.Println("Error decoding packet: ", err)
+	}
+
+	sDecode := pDecode.GetSample()
+	fmt.Printf("Decoded sample = %+v\n", sDecode)
+
+	sEvent := pDecode.GetEvent()
+	fmt.Printf("Decoded event = %+v\n", sEvent)
 
 }
 
