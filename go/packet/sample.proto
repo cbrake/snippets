@@ -1,0 +1,20 @@
+syntax = "proto3";
+package packet;
+
+import "google/protobuf/timestamp.proto";
+
+message Sample {
+	enum Type {
+		ANALOG = 0;
+		DIGIO = 1;
+	}
+	string id = 1;
+	Type type = 2;
+	int32 index = 3;
+	float value = 4;
+	google.protobuf.Timestamp time = 5;
+}
+
+message Samples {
+	repeated Sample samples = 1;
+}

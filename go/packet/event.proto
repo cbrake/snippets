@@ -1,0 +1,16 @@
+syntax = "proto3";
+package packet;
+
+import "google/protobuf/timestamp.proto";
+
+message Event {
+	string id = 1;
+	int32 index = 2;
+	int32 duration = 3;
+	float value = 4;
+	google.protobuf.Timestamp time = 5;
+}
+
+message Events {
+	repeated Event events = 1;
+}

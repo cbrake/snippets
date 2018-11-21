@@ -1,0 +1,16 @@
+syntax = "proto3";
+package packet;
+
+import "sample.proto";
+import "event.proto";
+
+message Packet {
+	oneof contents {
+		Sample sample = 1;
+		Event event = 2;
+	}
+}
+
+message Packets {
+	repeated Packet packets = 1;
+}
