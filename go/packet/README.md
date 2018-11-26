@@ -25,6 +25,7 @@ To run these tests:
 - `protoc --go_out=. *.proto`
 - `go run cmd/packet-encoding-compression-tests/main.go > encoding-compression.csv`
 - `go run cmd/protobuf-oneof/main.go`
+- `go run cmd/empty-field-cost/main.go`
 
 ## Encoding/Compression results
 
@@ -54,3 +55,14 @@ packet element with a
 [oneof](https://developers.google.com/protocol-buffers/docs/proto3#oneof)
 field. From the protobuf-oneof test, this adds 2 bytes per packet, which seems fairly
 efficient. Adding another field would likely take at least this much space.
+
+## Unused fields
+
+The empty-field-cost test program illustrates that adding a field to a protobuf message
+has no cost unless you actually fill it with something.
+
+`Sample len: 28, SampleDuration with zero dur: 28, SampleDuration: 33`
+
+In the above test, adding a floating point field adds 5 bytes to the message, only if it
+is set to something other than zero. This is very handy as it allows messages to be very
+flexible and the unused fields simply take no space.
