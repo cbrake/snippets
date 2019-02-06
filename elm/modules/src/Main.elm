@@ -2,6 +2,7 @@ module Main exposing (Model, Msg(..), init, main, update, view)
 
 import Browser
 import Button
+import Diagram
 import Html exposing (Html, button, div, h1, map, text)
 import Html.Events exposing (onClick)
 
@@ -30,6 +31,7 @@ init =
 
 type Msg
     = ButtonMsg Button.Msg
+    | DiagramMsg Diagram.Msg
 
 
 update : Msg -> Model -> Model
@@ -37,6 +39,9 @@ update msg model =
     case Debug.log "update msg" msg of
         ButtonMsg buttonMsg ->
             { model | button = Button.update buttonMsg model.button }
+
+        DiagramMsg diagramMsg ->
+            model
 
 
 
@@ -48,4 +53,5 @@ view model =
     div []
         [ h1 [] [ text "elm button example" ]
         , map ButtonMsg (Button.view model.button)
+        , map DiagramMsg Diagram.view
         ]
