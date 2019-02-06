@@ -1,4 +1,4 @@
-module ButtonWidget exposing (Msg(..))
+module Button exposing (Model, Msg(..), init, update, view)
 
 import Html exposing (Html, button, div, h1, text)
 import Html.Events exposing (onClick)
@@ -28,7 +28,7 @@ type Msg
 
 update : Msg -> Model -> Model
 update msg model =
-    case msg of
+    case Debug.log "Button.update msg: " msg of
         Increment ->
             model + 1
 

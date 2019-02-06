@@ -1,8 +1,8 @@
 module Main exposing (Model, Msg(..), init, main, update, view)
 
 import Browser
-import ButtonWidget
-import Html exposing (Html, button, div, h1, text)
+import Button
+import Html exposing (Html, button, div, h1, map, text)
 import Html.Events exposing (onClick)
 
 
@@ -15,7 +15,7 @@ main =
 
 
 type alias Model =
-    { buttonState : ButtonWidget.Model }
+    { button : Button.Model }
 
 
 init : Model
@@ -29,18 +29,14 @@ init =
 
 
 type Msg
-    = Increment
-    | Decrement
+    = ButtonMsg Button.Msg
 
 
 update : Msg -> Model -> Model
 update msg model =
-    case msg of
-        Increment ->
-            model + 1
-
-        Decrement ->
-            model - 1
+    case Debug.log "update msg" msg of
+        ButtonMsg buttonMsg ->
+            { model | button = Button.update buttonMsg model.button }
 
 
 
@@ -51,7 +47,5 @@ view : Model -> Html Msg
 view model =
     div []
         [ h1 [] [ text "elm button example" ]
-        , button [ onClick Decrement ] [ text "-" ]
-        , div [] [ text (String.fromInt model) ]
-        , button [ onClick Increment ] [ text "+" ]
+        , map ButtonMsg (Button.view model.button)
         ]
