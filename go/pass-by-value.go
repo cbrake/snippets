@@ -12,6 +12,22 @@ func test2(data []int) {
 	fmt.Println("data in test2: ", data)
 }
 
+type state struct {
+	Count int
+	Data  []int
+}
+
+func subsystem(in chan state) {
+	s := state{}
+	for {
+		select {
+		case m <- in:
+			fmt.Println("in: ", m)
+			s = m
+		}
+	}
+}
+
 func main() {
 	a := []int{1, 2, 3}
 	fmt.Println("data before test(): ", a)
