@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/cbrake/go-serial/serial"
+	"github.com/jacobsa/go-serial/serial"
 )
 
 // the below test illustrates out the goroutine in the reader will close if you close
