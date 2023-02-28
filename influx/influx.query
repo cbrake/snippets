@@ -1,0 +1,7 @@
+from(bucket: "siot")
+  |> range(start: -1s)
+  |> filter(fn: (r) => r._measurement == "points")
+  |> filter(fn: (r) => r["type"] == "voltage")
+
+
+
