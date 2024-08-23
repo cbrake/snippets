@@ -1,0 +1,24 @@
+
+#let counter = state("count", 0)
+
+#let fNumber() = {
+  counter.update(count => count + 1)
+  context counter.get()
+}
+
+#let f(title) = {
+  [Number #fNumber():\ content for #title \ \ \ ]
+}
+
+#outline(
+  title: [List of content],
+  // todo, how to create a list of f's here with their numbers instead of headings, etc.
+)
+
+= Content
+
+#f("function A")
+#f("function B")
+#f("function C")
+#f("function D")
+#f("function E")

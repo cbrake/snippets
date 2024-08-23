@@ -14,4 +14,5 @@
 }
 
 // Example usage:
-#display(([#image("dog-cat-icon-3.jpg")]))
+// #display(([#image("dog-cat-icon-3.jpg")]))
+#display(([hi there]))

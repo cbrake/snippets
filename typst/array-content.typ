@@ -15,4 +15,4 @@
 }
 
 // Example usage:
-#display(([hi], [there]))
+#display(([hi],))
