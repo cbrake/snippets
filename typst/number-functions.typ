@@ -7,15 +7,13 @@
 }
 
 #let f(title) = {
-  [Number #fNumber():\ content for #title \ \ \ ]
+  [= Number #fNumber()
+  content for #title \ \ \ ]
 }
 
 #outline(
   title: [List of content],
-  // todo, how to create a list of f's here with their numbers instead of headings, etc.
 )
-
-= Content
 
 #f("function A")
 #f("function B")
