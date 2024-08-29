@@ -11,6 +11,11 @@
   content for #title \ \ \ ]
 }
 
+#show outline: it => {
+  //strong(it)
+  it
+}
+
 #outline(
   title: [List of content],
 )
